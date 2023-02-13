@@ -10,8 +10,10 @@ __class_number_to_name={}
 
 __model=None
 
-def classify_image(file_path):
-    img=cv2.imread(file_path)
+def classify_image(image_base64_string,file_path=None):
+    #img=cv2.imread(file_path)
+    img=get_cv2_image_from_base64_string(image_base64_string)
+
     scalled_img=cv2.resize(img,(32,32))
     img_har=w2d(img,'db1',7)
     scalled_img_har=cv2.resize(img_har,(32,32))
@@ -39,14 +41,34 @@ def load_saved_artifacts():
     print("Loading saved artifacts...done")
 
 
+def get_cv2_image_from_base64_string(b64str):
+    '''
+    credit: https://stackoverflow.com/questions/33754935/read-a-base-64-encoded-image-from-memory-using-opencv-python-library
+    :param uri:
+    :return:
+    '''
+    encoded_data = b64str.split(',')[1]
+    nparr = np.frombuffer(base64.b64decode(encoded_data), np.uint8)
+    img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
+    return img
+
+
+
+
 def class_number_to_name(class_num):
     return __class_number_to_name[class_num]
+
+def get_b64_test_image_for_cyst():
+    with open("b64.txt") as f:
+        return f.read()
 
 if __name__ == '__main__':
     load_saved_artifacts()
     #print(classify_image(None, ))
-    print(classify_image("./test_img/cyst.jpg"))
-    print(classify_image("./test_img/miliria.jpg"))
-    print(classify_image("./test_img/rings.jpg"))
-    print(classify_image("./test_img/img_2.png"))
+    #print(classify_image("./test_img/cyst.jpg"))
+    #print(classify_image("./test_img/miliria.jpg"))
+    #print(classify_image("./test_img/rings.jpg"))
+    #print(classify_image("./test_img/img_2.png"))
+    #print(classify_image(get_b64_test_image_for_cyst(),None))
+    #print("sumon")
 
