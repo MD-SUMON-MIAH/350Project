@@ -19,6 +19,9 @@ function init() {
         let imageData = file.dataURL;
         
         var url = "http://127.0.0.1:5000/classify_image";
+        $("#signRing").hide();
+        $("#signMili").hide();
+        $("#signCyst").hide();
 
         $.post(url, {
             image_data: file.dataURL
@@ -77,6 +80,14 @@ function init() {
                 console.log(match);
                 $("#resultHolder").html($(`[data-player="${match}"`).html());
                 $("#resultHolder").show();
+                if(match=="ringworm")
+                $("#signRing").show();
+                if(match=="cyst")
+                $("#signCyst").show();
+                if(match=="miliria")
+                $("#signMili").show();
+                const aa=document.getElementsByClassName("signRing");
+                aa.style.display="visible";
               //  let classDictionary = match.class_dictionary;
              //   for(let personName in classDictionary) {
                //     let index = classDictionary[personName];
@@ -99,6 +110,9 @@ $(document).ready(function() {
     $("#error").hide();
     $("#resultHolder").hide();
     $("#divClassTable").hide();
+    $("#signRing").hide();
+    $("#signMili").hide();
+    $("#signCyst").hide();
 
     init();
 });

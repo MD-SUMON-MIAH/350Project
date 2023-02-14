@@ -56,3 +56,24 @@
   background-color: #4CAF50;
   color: white;
 }
+h3{
+  box-shadow: #4CAF50;
+  text-shadow: darkblue;
+  color: darkcyan;
+  text-shadow: 100pc;
+  text-overflow: ellipsis;
+  font-style: italic;
+ 
+}
+#signRing
+{
+  visibility: show;
+}
+#signMili
+{
+  visibility: show;
+}
+.signCyst
+{
+  visibility: show;
+}
