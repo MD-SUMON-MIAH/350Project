@@ -14,11 +14,11 @@ def classify_image(image_base64_string,file_path=None):
     #img=cv2.imread(file_path)
     img=get_cv2_image_from_base64_string(image_base64_string)
 
-    scalled_img=cv2.resize(img,(32,32))
+    scalled_img=cv2.resize(img,(50,50))
     img_har=w2d(img,'db1',7)
-    scalled_img_har=cv2.resize(img_har,(32,32))
-    combined_img = np.vstack((scalled_img.reshape(32*32*3,1),scalled_img_har.reshape(32*32,1)))
-    len_image_array=32*32*3+32*32
+    scalled_img_har=cv2.resize(img_har,(50,50))
+    combined_img = np.vstack((scalled_img.reshape(50*50*3,1),scalled_img_har.reshape(50*50,1)))
+    len_image_array=50*50*3+50*50
     #final=combined_img
     final=combined_img.reshape(1,len_image_array).astype(float)
     result=[]
