@@ -79,6 +79,9 @@ h3{
 }
 .box{
   float: left;
-  width: 50%;
+  width: 25%;
   padding: 10px;
+}
+#divClassTableSumon{
+  width: 100%;
 }

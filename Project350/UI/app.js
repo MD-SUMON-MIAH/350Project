@@ -97,6 +97,9 @@ function init() {
                 {
                     $("#signCyst").show();
                     $("#CystSymptomps").show();
+                    $("#CauseOfCyst").show();
+                    $("#RemedyOfCyst").show();
+                    $("#PreventionOfCyst").show();
                 }
                 
                 if(match=="miliria")
@@ -148,6 +151,19 @@ $(document).ready(function() {
      $("#RingSymptomps").hide();
      $("#CystSymptomps").hide();
      $("#MiliariaSymptomps").hide();
+
+     $("#CauseOfMiliaria").hide();
+     $("#CauseOfCyst").hide();
+     $("#CauseOfRingworm").hide();
+
+     $("#RemedyOfMiliaria").hide();
+     $("#RemedyOfCyst").hide();
+     $("#RemedyOfRingworm").hide();
+
+     $("#PreventionOfMiliaria").hide();
+     $("#PreventionOfCyst").hide();
+     $("#PreventionOfRingworm").hide();
+     
     
 
     init();
