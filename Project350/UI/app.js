@@ -22,6 +22,10 @@ function init() {
         $("#signRing").hide();
         $("#signMili").hide();
         $("#signCyst").hide();
+        $("#RingSymptomps").hide();
+        $("#CystSymptomps").hide();
+        $("#MiliariaSymptomps").hide();
+        
 
         $.post(url, {
             image_data: file.dataURL
@@ -59,6 +63,7 @@ function init() {
                 $("#resultHolder").hide();
                 $("#divClassTable").hide();                
                 $("#error").show();
+
                 return;
             }
             let players = ["cyst", "maria_sharapova", "roger_federer", "serena_williams", "virat_kohli"];
@@ -77,17 +82,41 @@ function init() {
                 $("#error").hide();
                 $("#resultHolder").show();
                 $("#divClassTable").show();
+
+                
                 console.log(match);
                 $("#resultHolder").html($(`[data-player="${match}"`).html());
                 $("#resultHolder").show();
+                
                 if(match=="ringworm")
-                $("#signRing").show();
+                {
+                    $("#signRing").show();
+                    $("#RingSymptomps").show();
+                }
                 if(match=="cyst")
-                $("#signCyst").show();
+                {
+                    $("#signCyst").show();
+                    $("#CystSymptomps").show();
+                }
+                
                 if(match=="miliria")
-                $("#signMili").show();
+                {
+                    $("#signMili").show();
+                    $("#MiliariaSymptomps").show();
+
+                }
+                
+
+
+                $("#xSS").show();
                 const aa=document.getElementsByClassName("signRing");
                 aa.style.display="visible";
+               // const aa2=document.getElementById("divClassTableSumon");
+                //aa2.style.display="visible";
+                
+
+                
+
               //  let classDictionary = match.class_dictionary;
              //   for(let personName in classDictionary) {
                //     let index = classDictionary[personName];
@@ -109,10 +138,17 @@ $(document).ready(function() {
     console.log( "ready!" );
     $("#error").hide();
     $("#resultHolder").hide();
-    $("#divClassTable").hide();
+    //$("#divClassTable").hide();
     $("#signRing").hide();
     $("#signMili").hide();
     $("#signCyst").hide();
+    //$("#divClassTableSumon").hide();
+    //$("#xSS").hide();
+   //$("#xS").hide();
+     $("#RingSymptomps").hide();
+     $("#CystSymptomps").hide();
+     $("#MiliariaSymptomps").hide();
+    
 
     init();
 });
