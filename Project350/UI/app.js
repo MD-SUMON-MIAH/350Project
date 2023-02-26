@@ -25,6 +25,22 @@ function init() {
         $("#RingSymptomps").hide();
         $("#CystSymptomps").hide();
         $("#MiliariaSymptomps").hide();
+
+        $("#CauseOfMiliaria").hide();
+        $("#CauseOfCyst").hide();
+        $("#CauseOfRingworm").hide();
+   
+        $("#RemedyOfMiliaria").hide();
+        $("#RemedyOfCyst").hide();
+        $("#RemedyOfRingworm").hide();
+   
+        $("#PreventionOfMiliaria").hide();
+        $("#PreventionOfCyst").hide();
+        $("#PreventionOfRingworm").hide();
+        
+        $("#LinkOfMiliaria").hide();
+        $("#LinkOfCyst").hide();
+        $("#LinkOfRingworm").hide();
         
 
         $.post(url, {
@@ -92,6 +108,11 @@ function init() {
                 {
                     $("#signRing").show();
                     $("#RingSymptomps").show();
+                    $("#CauseOfRingworm").show();
+                    $("#RemedyOfRingworm").show();
+                    $("#PreventionOfRingworm").show();
+                    $("#LinkOfRingworm").show();
+                    
                 }
                 if(match=="cyst")
                 {
@@ -100,18 +121,23 @@ function init() {
                     $("#CauseOfCyst").show();
                     $("#RemedyOfCyst").show();
                     $("#PreventionOfCyst").show();
+                    $("#LinkOfCyst").show();
                 }
                 
                 if(match=="miliria")
                 {
                     $("#signMili").show();
                     $("#MiliariaSymptomps").show();
+                    $("#CauseOfMiliaria").show();
+                    $("#RemedyOfMiliaria").show();
+                    $("#PreventionOfMiliaria").show();
+                    $("#LinkOfMiliaria").show();
 
                 }
                 
 
 
-                $("#xSS").show();
+               // $("#xSS").show();
                 const aa=document.getElementsByClassName("signRing");
                 aa.style.display="visible";
                // const aa2=document.getElementById("divClassTableSumon");
@@ -164,6 +190,9 @@ $(document).ready(function() {
      $("#PreventionOfCyst").hide();
      $("#PreventionOfRingworm").hide();
      
+     $("#LinkOfMiliaria").hide();
+     $("#LinkOfCyst").hide();
+     $("#LinkOfRingworm").hide();
     
 
     init();
