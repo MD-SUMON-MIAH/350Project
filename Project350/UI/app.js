@@ -22,25 +22,32 @@ function init() {
         $("#signRing").hide();
         $("#signMili").hide();
         $("#signCyst").hide();
+        $("#signMoles").hide();
+
         $("#RingSymptomps").hide();
         $("#CystSymptomps").hide();
         $("#MiliariaSymptomps").hide();
+        $("#MolesSymptomps").hide();
 
         $("#CauseOfMiliaria").hide();
         $("#CauseOfCyst").hide();
         $("#CauseOfRingworm").hide();
+        $("#CauseOfMoles").hide();
    
         $("#RemedyOfMiliaria").hide();
         $("#RemedyOfCyst").hide();
         $("#RemedyOfRingworm").hide();
+        $("#RemedyOfMoles").hide();
    
         $("#PreventionOfMiliaria").hide();
         $("#PreventionOfCyst").hide();
         $("#PreventionOfRingworm").hide();
+        $("#PreventionOfMoles").hide();
         
         $("#LinkOfMiliaria").hide();
         $("#LinkOfCyst").hide();
         $("#LinkOfRingworm").hide();
+        $("#LinkOfMoles").hide();
         
 
         $.post(url, {
@@ -134,6 +141,16 @@ function init() {
                     $("#LinkOfMiliaria").show();
 
                 }
+                if(match=="moles")
+                {
+                    $("#signMoles").show();
+                    $("#MolesSymptomps").show();
+                    $("#CauseOfMoles").show();
+                    $("#RemedyOfMoles").show();
+                    $("#PreventionOfMoles").show();
+                    $("#LinkOfMoles").show();
+
+                }
                 
 
 
@@ -171,28 +188,34 @@ $(document).ready(function() {
     $("#signRing").hide();
     $("#signMili").hide();
     $("#signCyst").hide();
+    $("#signMoles").hide();
     //$("#divClassTableSumon").hide();
     //$("#xSS").hide();
    //$("#xS").hide();
      $("#RingSymptomps").hide();
      $("#CystSymptomps").hide();
      $("#MiliariaSymptomps").hide();
+     $("#MolesSymptomps").hide();
 
      $("#CauseOfMiliaria").hide();
      $("#CauseOfCyst").hide();
      $("#CauseOfRingworm").hide();
+     $("#CauseOfMoles").hide();
 
      $("#RemedyOfMiliaria").hide();
      $("#RemedyOfCyst").hide();
      $("#RemedyOfRingworm").hide();
+     $("#RemedyOfMoles").hide();
 
      $("#PreventionOfMiliaria").hide();
      $("#PreventionOfCyst").hide();
      $("#PreventionOfRingworm").hide();
+     $("#PreventionOfMoles").hide();
      
      $("#LinkOfMiliaria").hide();
      $("#LinkOfCyst").hide();
      $("#LinkOfRingworm").hide();
+     $("#LinkOfMoles").hide();
     
 
     init();
