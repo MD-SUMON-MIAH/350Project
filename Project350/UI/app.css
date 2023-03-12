@@ -85,3 +85,17 @@ h3{
 #divClassTableSumon{
   width: 100%;
 }
+.menu {
+  background-color: paleturquoise;
+  display: flex;
+  justify-content: flex-end;
+}
+.menu a {
+  text-decoration: none;
+  padding: 30px;
+  color: purple;
+}
+
+.menu a:hover {
+  background-color: gray;
+}
